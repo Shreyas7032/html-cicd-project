@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KisanKart - Fresh Vegetables Direct from Farm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-leaf"></i>
+                <span>KisanKart</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <div id="public-nav-links">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-auth" id="nav-auth">
+                    <button class="btn btn-outline" onclick="showLoginModal()">Login</button>
+                    <button class="btn btn-primary" onclick="showSignupModal()">Sign Up</button>
+                </div>
+                <div class="nav-user" id="nav-user" style="display: none;">
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                    <span id="user-name"></span>
+                    <button class="btn btn-outline" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Landing Page -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Fresh Vegetables Direct from Farm</h1>
+                <p class="hero-subtitle">Connect with local farmers and get the freshest vegetables delivered to your doorstep</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large" onclick="showSignupModal()">Get Started</button>
+                    <button class="btn btn-outline btn-large" onclick="showLoginModal()">Login</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Vegitables.jpg" alt="Fresh Vegetables">
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-hero">
+                    <h2>About KisanKart</h2>
+                    <p class="about-subtitle">Connecting farmers directly with consumers for fresh, organic produce</p>
+                </div>
+                
+                <div class="about-story">
+                    <div class="story-content">
+                        <h3>Our Story</h3>
+                        <p>KisanKart was born from a simple yet powerful vision: to bridge the gap between hardworking farmers and health-conscious consumers. We believe that everyone deserves access to fresh, organic vegetables while ensuring farmers receive fair compensation for their dedication.</p>
+                        <p>Founded in 2024, we've grown from a small local initiative to a thriving platform that supports hundreds of farmers and serves thousands of families across the region.</p>
+                    </div>
+                    <div class="story-image">
+                        <img src="farmer2.jpg" alt="Farmer in field">
+                    </div>
+                </div>
+
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>100% Organic</h3>
+                        <p>All our vegetables are grown using organic farming methods, free from harmful pesticides and chemicals.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Farm to Table</h3>
+                        <p>Direct delivery from farms to your doorstep within 24 hours of harvest, ensuring maximum freshness.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Fair Trade</h3>
+                        <p>We ensure farmers receive fair prices for their produce, supporting sustainable agriculture.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Quality Assured</h3>
+                        <p>Every product goes through rigorous quality checks before reaching your table.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Our customer support team is always ready to help you with any queries or concerns.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Easy Ordering</h3>
+                        <p>Simple and intuitive platform makes ordering fresh vegetables a breeze.</p>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h3>Our Impact</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Happy Farmers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10,000+</div>
+                            <div class="stat-label">Satisfied Customers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50,000+</div>
+                            <div class="stat-label">Orders Delivered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Varieties Available</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-section">
+                    <h3>Meet Our Team</h3>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="Founder.jpg" alt="Shreyas Jadhav">
+                            </div>
+                            <h4>Shreyas Jadhav</h4>
+                            <p>Founder & CEO</p>
+                            <div class="member-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="Dada.jpg" alt="Tejas">
+                            </div>
+                            <h4>Tejas Jadhav</h4>
+                            <p>Head of Operations</p>
+                            <div class="member-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="sakshi.jpg" alt="Sakshi">
+                            </div>
+                            <h4>Sakshi Jamdade</h4>
+                            <p>Technology Lead</p>
+                            <div class="member-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-hero">
+                    <h2>Get In Touch</h2>
+                    <p class="contact-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Our Address</h4>
+                                <p>7032 Karve Nagar Road<br>Agricultural District<br>, Maharashtra 400001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone Number</h4>
+                                <p>+91 84460 82951<br>+91 95520 43157</p>
+                            </div>
+                        </div>
+                                
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email Address</h4>
+                                <p>info@kisankart.com<br>support@kisankart.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Working Hours</h4>
+                                <p>Monday - Saturday: 6:00 AM - 8:00 PM<br>Sunday: 7:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name">Full Name</label>
+                                    <input type="text" id="contact-name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Email Address</label>
+                                    <input type="email" id="contact-email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-phone">Phone Number</label>
+                                    <input type="tel" id="contact-phone" name="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-subject">Subject</label>
+                                    <select id="contact-subject" name="subject" required>
+                                        <option value="">Select Subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="support">Customer Support</option>
+                                        <option value="partnership">Partnership</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="complaint">Complaint</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" name="message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+
+        <!-- Farmer Dashboard -->
+        <section id="farmer-dashboard" class="dashboard" style="display: none;">
+            <div class="dashboard-header">
+                <h1>Farmer Dashboard</h1>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-seedling"></i>
+                        <div>
+                            <h3 id="total-products">0</h3>
+                            <p>Total Products</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-shopping-cart"></i>
+                        <div>
+                            <h3 id="total-sales">0</h3>
+                            <p>Total Sales</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-dollar-sign"></i>
+                        <div>
+                            <h3 id="total-revenue">₹0</h3>
+                            <p>Total Revenue</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Add New Vegetable</h2>
+                        <button class="btn btn-primary" onclick="showAddProductModal()">
+                            <i class="fas fa-plus"></i> Add Product
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2>My Products</h2>
+                        <div class="filters">
+                            <select id="sort-products">
+                                <option value="name">Sort by Name</option>
+                                <option value="price">Sort by Price</option>
+                                <option value="stock">Sort by Stock</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="products-grid" id="farmer-products"></div>
+                </div>
+
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Sales Report</h2>
+                        <button class="btn btn-outline" onclick="generateFarmerReport()">
+                            <i class="fas fa-download"></i> Generate Report
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table id="sales-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                    <th>Customer</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sales-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Dashboard -->
+        <section id="customer-dashboard" class="dashboard" style="display: none;">
+            <div class="dashboard-header">
+                <h1>Customer Dashboard</h1>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-shopping-bag"></i>
+                        <div>
+                            <h3 id="cart-items">0</h3>
+                            <p>Cart Items</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-receipt"></i>
+                        <div>
+                            <h3 id="total-orders">0</h3>
+                            <p>Total Orders</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-rupee-sign"></i>
+                        <div>
+                            <h3 id="total-spent">₹0</h3>
+                            <p>Total Spent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Available Vegetables</h2>
+                        <div class="filters">
+                            <input type="text" id="search-products" placeholder="Search vegetables...">
+                            <select id="filter-category">
+                                <option value="">All Categories</option>
+                                <option value="leafy">Leafy Greens</option>
+                                <option value="root">Root Vegetables</option>
+                                <option value="fruit">Fruit Vegetables</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="products-grid" id="customer-products"></div>
+                </div>
+
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Shopping Cart</h2>
+                        <button class="btn btn-primary" onclick="checkout()" id="checkout-btn" disabled>
+                            <i class="fas fa-credit-card"></i> Checkout
+                        </button>
+                    </div>
+                    <div id="cart-items-container"></div>
+                </div>
+
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Order History</h2>
+                    </div>
+                    <div class="table-container">
+                        <table id="orders-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Date</th>
+                                    <th>Items</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard -->
+        <section id="admin-dashboard" class="dashboard" style="display: none;">
+            <div class="dashboard-header">
+                <h1>Admin Dashboard</h1>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h3 id="total-farmers">0</h3>
+                            <p>Total Farmers</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-user-friends"></i>
+                        <div>
+                            <h3 id="total-customers">0</h3>
+                            <p>Total Customers</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div>
+                            <h3 id="platform-revenue">₹0</h3>
+                            <p>Platform Revenue</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Platform Overview</h2>
+                        <button class="btn btn-primary" onclick="generateAdminReport()">
+                            <i class="fas fa-chart-bar"></i> Generate Report
+                        </button>
+                    </div>
+                    <div class="overview-cards">
+                        <div class="overview-card">
+                            <h3>Today's Sales</h3>
+                            <p id="today-sales">₹0</p>
+                        </div>
+                        <div class="overview-card">
+                            <h3>Active Products</h3>
+                            <p id="active-products">0</p>
+                        </div>
+                        <div class="overview-card">
+                            <h3>Pending Orders</h3>
+                            <p id="pending-orders">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Manage Users</h2>
+                    </div>
+                    <div class="tabs">
+                        <button class="tab-btn active" onclick="showTab('farmers-tab')">Farmers</button>
+                        <button class="tab-btn" onclick="showTab('customers-tab')">Customers</button>
+                        <button class="tab-btn" onclick="showTab('orders-tab')">Orders</button>
+                        <button class="tab-btn" onclick="showTab('contacts-tab')">Contact Messages</button>
+                    </div>
+                    <div id="farmers-tab" class="tab-content active">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Products</th>
+                                        <th>Revenue</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="farmers-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="customers-tab" class="tab-content">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Orders</th>
+                                        <th>Total Spent</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="customers-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="orders-tab" class="tab-content">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Items</th>
+                                    <th>Total</th>
+                                    <th>Payment</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-orders-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="contacts-tab" class="tab-content">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Subject</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="contacts-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login to KisanKart</h2>
+                <span class="close" onclick="closeModal('login-modal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="user-type-selector">
+                    <button class="user-type-btn active" data-type="customer">Customer</button>
+                    <button class="user-type-btn" data-type="farmer">Farmer</button>
+                    <button class="user-type-btn" data-type="admin">Admin</button>
+                </div>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
+                </form>
+                <p class="modal-footer">Don't have an account? <a href="#" onclick="showSignupModal()">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Join KisanKart</h2>
+                <span class="close" onclick="closeModal('signup-modal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="user-type-selector">
+                    <button class="user-type-btn active" data-type="customer">Customer</button>
+                    <button class="user-type-btn" data-type="farmer">Farmer</button>
+                    <button class="user-type-btn" data-type="admin">Admin</button>
+                </div>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-phone">Phone</label>
+                        <input type="tel" id="signup-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" required>
+                    </div>
+                    <div class="form-group" id="admin-key-group" style="display: none;">
+                        <label for="admin-key">Admin Key</label>
+                        <input type="password" id="admin-key" placeholder="Enter admin key">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+                </form>
+                <p class="modal-footer">Already have an account? <a href="#" onclick="showLoginModal()">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div id="add-product-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Vegetable</h2>
+                <span class="close" onclick="closeModal('add-product-modal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="add-product-form">
+                    <div class="form-group">
+                        <label for="product-name">Vegetable Name</label>
+                        <input type="text" id="product-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-category">Category</label>
+                        <select id="product-category" required>
+                            <option value="">Select Category</option>
+                            <option value="leafy">Leafy Greens</option>
+                            <option value="root">Root Vegetables</option>
+                            <option value="fruit">Fruit Vegetables</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-price">Price per kg (₹)</label>
+                        <input type="number" id="product-price" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-stock">Stock (kg)</label>
+                        <input type="number" id="product-stock" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-description">Description</label>
+                        <textarea id="product-description" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-image">Product Image</label>
+                        <input type="file" id="product-image" accept="image/*" class="file-input">
+                        <div class="image-preview" id="image-preview" style="display: none;">
+                            <img id="preview-img" src="/placeholder.svg" alt="Preview" style="max-width: 200px; max-height: 200px; border-radius: 8px; margin-top: 10px;">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Add Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div id="edit-product-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Vegetable</h2>
+                <span class="close" onclick="closeModal('edit-product-modal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="edit-product-form">
+                    <input type="hidden" id="edit-product-id">
+                    <div class="form-group">
+                        <label for="edit-product-name">Vegetable Name</label>
+                        <input type="text" id="edit-product-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-product-category">Category</label>
+                        <select id="edit-product-category" required>
+                            <option value="">Select Category</option>
+                            <option value="leafy">Leafy Greens</option>
+                            <option value="root">Root Vegetables</option>
+                            <option value="fruit">Fruit Vegetables</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-product-price">Price per kg (₹)</label>
+                        <input type="number" id="edit-product-price" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-product-stock">Stock (kg)</label>
+                        <input type="number" id="edit-product-stock" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-product-description">Description</label>
+                        <textarea id="edit-product-description" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-product-image">Product Image</label>
+                        <input type="file" id="edit-product-image" accept="image/*" class="file-input">
+                        <div class="image-preview" id="edit-image-preview">
+                            <img id="edit-preview-img" src="/placeholder.svg" alt="Current Image" style="max-width: 200px; max-height: 200px; border-radius: 8px; margin-top: 10px;">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Update Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Payment Details</h2>
+                <span class="close" onclick="closeModal('payment-modal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="payment-summary"></div>
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="payment-method">Payment Method</label>
+                        <div class="payment-methods">
+                            <div class="payment-option">
+                                <input type="radio" id="cod" name="payment-method" value="cod" checked>
+                                <label for="cod" class="payment-label">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <span>Cash on Delivery</span>
+                                    <small>Pay when you receive</small>
+                                </label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="upi" name="payment-method" value="upi">
+                                <label for="upi" class="payment-label">
+                                    <i class="fab fa-google-pay"></i>
+                                    <span>UPI Payment</span>
+                                    <small>Google Pay, PhonePe, Paytm</small>
+                                </label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="card" name="payment-method" value="card">
+                                <label for="card" class="payment-label">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Credit/Debit Card</span>
+                                    <small>Visa, Mastercard, RuPay</small>
+                                </label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="netbanking" name="payment-method" value="netbanking">
+                                <label for="netbanking" class="payment-label">
+                                    <i class="fas fa-university"></i>
+                                    <span>Net Banking</span>
+                                    <small>All major banks</small>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="delivery-address">Delivery Address</label>
+                        <textarea id="delivery-address" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

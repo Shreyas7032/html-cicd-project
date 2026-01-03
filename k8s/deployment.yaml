@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: html-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: html-app
+  template:
+    metadata:
+      labels:
+        app: html-app
+    spec:
+      containers:
+      - name: html-container
+        image: nexus.imcc.com/student/html-cicd:v1
+        ports:
+        - containerPort: 80
