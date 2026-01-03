@@ -5,16 +5,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/shreyas7032/html-cicd-project.git
-'
-            }
-        }
-
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('sonarqube') {
-                    sh 'sonar-scanner'
-                }
+                git branch: 'main', url: 'https://github.com/Shreyas7032/html-cicd-project.git'
             }
         }
 
@@ -37,3 +28,4 @@ pipeline {
         }
     }
 }
+
