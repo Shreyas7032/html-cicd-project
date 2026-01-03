@@ -9,18 +9,6 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
-            steps {
-                sh 'docker build -t nexus.imcc.com/student/html-cicd:v1 .'
-            }
-        }
-
-        stage('Push Image to Nexus') {
-            steps {
-                sh 'docker push nexus.imcc.com/student/html-cicd:v1'
-            }
-        }
-
         stage('Deploy to Kubernetes') {
             steps {
                 sh 'kubectl apply -f k8s/'
@@ -28,4 +16,3 @@ pipeline {
         }
     }
 }
-
